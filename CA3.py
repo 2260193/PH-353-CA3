@@ -1,6 +1,5 @@
 import numpy as np
 import matplotlib.pyplot as plt
-
 # Constants
 hbar = 1.0  
 m = 1.0  
@@ -62,6 +61,7 @@ for mu,m,lambda_ in values:
                 if np.random.rand() < np.exp(-beta * delta_action):
                     path = new_path
                     current_action = new_action
+               
             
             paths.append(path)
         
@@ -101,7 +101,9 @@ for mu,m,lambda_ in values:
     plt.legend()
     plt.show()
 
+
+print("potential graph for mu = -3, m = 1, lambda = 1, showing two degenerative minima.")
 x_values = np.linspace(-1,1,100)
-plt.plot(x_values, (V(x_values, -1, 1)))
+plt.plot(x_values, ((0.5 * -3 * x_values**2) + 3*(1 * (x_values**4))))
 
  
